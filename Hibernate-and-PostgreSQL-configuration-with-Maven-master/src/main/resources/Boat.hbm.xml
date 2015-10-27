@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Used to demonstrate the declarative configuration of both hbm files 
+	and annotated classes See hibernate.cfg.xml and ConfigurationTest -->
+
+<hibernate-mapping package="com.jvmhub.tutorial.entity">
+
+	<typedef class="com.jvmhub.tutorial.entity.MonopolyMoney"
+		name="MonopolyMoneyType" />
+
+
+	<class name="AppUser" table="AppUserInXml">
+
+		<id name="id">
+			<generator class="native" />
+		</id>
+
+		<property name="firstName" column="boatName" />
+		<property name="dept" column="depot" />
+		<property name="expenseAmt" column="expenseAmount" />
+		<property name="expenseCCY" column="expenseCurrency" />
+
+		<property name="payType" column="PayType">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.jvmhub.tutorial.entity.PayType</param>
+			</type>
+		</property>
+
+	</class>
+
+</hibernate-mapping>

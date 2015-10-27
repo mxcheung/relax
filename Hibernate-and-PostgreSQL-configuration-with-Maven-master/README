@@ -1,0 +1,7 @@
+https://docs.jboss.org/hibernate/stable/annotations/reference/en/html/ch01.html
+
+
+To ease the migration process from hbm files to annotations, the configuration mechanism detects the mapping duplication between annotations and hbm files. 
+HBM files are then prioritized over annotated metadata on a class to class basis. 
+You can change the priority using hibernate.mapping.precedence property. 
+The default is hbm, class, changing it to class, hbm will prioritize the annotated classes over hbm files when a conflict occurs.
